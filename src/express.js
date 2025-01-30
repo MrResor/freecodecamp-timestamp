@@ -15,6 +15,11 @@ app.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static(__dirname + '/public'));
 
+app.use((req, _, next) => {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+});
+
 //Routes declaration
 
 // http://expressjs.com/en/starter/basic-routing.html
