@@ -1,5 +1,6 @@
 var express = require('express');
 var cors = require('cors');
+var path = require('path');
 
 var mainView = require('./index');
 var hello = require('./api/hello/index');
@@ -13,7 +14,7 @@ var app = express();
 app.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use((req, _, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
