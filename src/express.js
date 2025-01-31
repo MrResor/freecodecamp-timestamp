@@ -4,6 +4,8 @@ var path = require('path');
 
 var mainView = require('./index');
 var hello = require('./api/hello/index');
+var empty_date = require('./api/index');
+var date = require('./api/:date/index');
 
 var app = express();
 
@@ -25,6 +27,10 @@ app.use((req, _, next) => {
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", mainView.mainView);
+
+app.get("/api/", empty_date.date);
+
+app.get("/api/:date", date.date);
 
 // your first API endpoint... 
 app.get("/api/hello", hello.hello);
