@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 router.get('/api/:date', (req, res) => {
     var input = Number(req.params.date);
-    console.log(req.params.date);
     var unix, utc;
     if (isNaN(input)) {
         unix = Date.parse(req.params.date);
