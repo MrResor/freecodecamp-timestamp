@@ -1,13 +1,13 @@
-var express = require('express');
-var cors = require('cors');
-var path = require('path');
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
 
-var mainView = require('./index');
-var hello = require('./api/hello/index');
-var empty_date = require('./api/index');
-var date = require('./api/:date/index');
+const mainView = require('./index');
+const hello = require('./api/hello/index');
+const empty_date = require('./api/index');
+const date = require('./api/:date/index');
 
-var app = express();
+const app = express();
 
 //Middleware declaration
 
@@ -25,14 +25,16 @@ app.use((req, _, next) => {
 
 //Routes declaration
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", mainView.mainView);
+// /
+app.use(mainView);
 
-app.get("/api/", empty_date.date);
+// /api
+app.use(empty_date);
 
-app.get("/api/:date", date.date);
+// /api/:date
+app.use(date);
 
-// your first API endpoint... 
-app.get("/api/hello", hello.hello);
+// /api/hello 
+app.use(hello);
 
-module.exports = { app }
+module.exports = app;
