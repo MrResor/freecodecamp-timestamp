@@ -1,5 +1,7 @@
-function hello(_, res) {
-    res.json({ greeting: 'hello API' });
-}
+const router = require('express').Router();
 
-module.exports = { hello };
+router.get('/api/hello', (_, res) => {
+    res.json({ greeting: 'hello API' });
+});
+
+module.exports = router;

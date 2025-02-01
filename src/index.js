@@ -1,7 +1,8 @@
-var path = require('path');
+const path = require('path');
+const router = require('express').Router();
 
-function mainView(_, res) {
+router.get('/', (_, res) => {
     res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
-};
+});
 
-module.exports = { mainView };
+module.exports = router;

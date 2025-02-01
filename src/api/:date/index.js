@@ -1,4 +1,6 @@
-function date(req, res) {
+const router = require('express').Router();
+
+router.get('/api/:date', (req, res) => {
     var input = Number(req.params.date);
     console.log(req.params.date);
     var unix, utc;
@@ -11,6 +13,6 @@ function date(req, res) {
     }
     let msg = (utc === 'Invalid Date') ? { 'error': 'Invalid Date' } : { 'unix': Number(unix), 'utc': utc };
     res.json(msg);
-};
+});
 
-module.exports = { date };
+module.exports = router;
