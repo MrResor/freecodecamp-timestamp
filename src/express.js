@@ -6,6 +6,7 @@ const mainView = require('./index');
 const hello = require('./api/hello/index');
 const empty_date = require('./api/index');
 const date = require('./api/:date/index');
+const docs = require('./api/docs/index');
 
 const app = express();
 
@@ -28,13 +29,17 @@ app.use((req, _, next) => {
 // /
 app.use(mainView);
 
+// /api/hello 
+app.use(hello);
+
+// /api/docs
+app.use(docs);
+
 // /api
 app.use(empty_date);
 
 // /api/:date
 app.use(date);
 
-// /api/hello 
-app.use(hello);
 
 module.exports = app;
