@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Swagger Petstore - OpenAPI 3.0
+  title: Timestamp Microservice
   description: Solution of a freecodecamp task for creating a timestamp microservice.
   contact:
     email: jakusienko@gmail.com
