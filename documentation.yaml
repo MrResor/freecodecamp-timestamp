@@ -12,7 +12,7 @@ externalDocs:
   url: test
   description: test
 servers:
-  - url: timestamp.profresor.net
+  - url: https://timestamp.profresor.net
 paths:
   /api:
     get:
