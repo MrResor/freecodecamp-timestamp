@@ -1,14 +1,15 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
 
-const mainView = require('./index');
-const hello = require('./api/hello/index');
-const empty_date = require('./api/index');
-const date = require('./api/:date/index');
-const docs = require('./api/docs/index');
+import { mainView } from "./index.js";
+import { hello } from "./api/hello/index.js";
+import { empty_date } from "./api/index.js";
+import { date } from "./api/:date/index.js";
+import { docs } from "./api/docs/index.js";
 
 const app = express();
+const __dirname = import.meta.dirname;
 
 //Middleware declaration
 
@@ -42,4 +43,4 @@ app.use(empty_date);
 app.use(date);
 
 
-module.exports = app;
+export { app };

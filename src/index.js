@@ -1,8 +1,10 @@
-const path = require('path');
-const router = require('express').Router();
+import path from 'path';
+import express from 'express';
 
-router.get('/', (_, res) => {
+const mainView = express.Router();
+
+mainView.get('/', (_, res) => {
     res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
 
-module.exports = router;
+export { mainView };

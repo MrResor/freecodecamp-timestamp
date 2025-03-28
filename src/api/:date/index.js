@@ -1,6 +1,8 @@
-const router = require('express').Router();
+import express from 'express';
 
-router.get('/api/:date', (req, res) => {
+const date = express.Router();
+
+date.get('/api/:date', (req, res) => {
     var input = Number(req.params.date);
     var unix, utc;
     if (isNaN(input)) {
@@ -14,4 +16,4 @@ router.get('/api/:date', (req, res) => {
     res.json(msg);
 });
 
-module.exports = router;
+export { date };

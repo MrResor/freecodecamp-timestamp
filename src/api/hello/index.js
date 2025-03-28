@@ -1,7 +1,9 @@
-const router = require('express').Router();
+import express from 'express';
 
-router.get('/api/hello', (_, res) => {
+const hello = express.Router();
+
+hello.get('/api/hello', (_, res) => {
     res.json({ greeting: 'hello API' });
 });
 
-module.exports = router;
+export { hello };

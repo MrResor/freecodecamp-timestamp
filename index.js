@@ -1,4 +1,4 @@
-const app = require('./src/express');
+import { app } from "./src/express.js";
 
 // Listen on port set in environment variable or default to 3000
 var listener = app.listen(3000, function () {
