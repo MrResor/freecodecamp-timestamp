@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "An FCC Backend Challenge",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
@@ -10,6 +11,7 @@
     "cors": "^2.8.0",
     "express": "^4.12.4",
     "swagger-ui-express": "^5.0.1",
+    "winston": "^3.17.0",
     "yaml": "^2.7.0"
   },
   "repository": {
