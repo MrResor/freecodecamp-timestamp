@@ -10,24 +10,29 @@ import { logger } from "./logger.js";
 import { mainView } from "./index.js";
 
 const app = express();
+const router = express.Router();
 const __dirname = import.meta.dirname;
 
 //Middleware declaration
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
-app.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
+router.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(path.join(__dirname, '..', 'public')));
+router.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use((req, _, next) => {
-    
-    let hasRouteToHandle = false;
-    app._router.stack.forEach((stackItem) => {
+router.use((req, _, next) => {
+
+    let hasRouteToHandle = null;
+    router.stack.forEach((stackItem) => {
         // check if current rout path matches route request path
-        if (stackItem.route?.path === req.path) {
-            hasRouteToHandle = true;
+        if (stackItem.handle?.stack !== undefined) {
+            stackItem?.handle.stack.forEach((innerItem) => {
+                if (innerItem.regexp.test(req.path)) {
+                    hasRouteToHandle = true;
+                }
+            });
         }
     });
 
@@ -37,28 +42,26 @@ app.use((req, _, next) => {
         logger.info(msg);
     } else {
         // No matching route for this request
-       logger.error(msg);
+        logger.error(msg);
     }
-    
+
     next();
 });
 
 //Routes declaration
 
 // /
-app.use(mainView);
-
-// /api/hello 
-app.use(hello);
-
+router.use(mainView);
+// /api/hello
+router.use(hello);
 // /api/docs
-app.use(docs);
-
+router.use(docs);
 // /api
-app.use(empty_date);
+router.use(empty_date);
+// /api:date
+router.use(date);
 
-// /api/:date
-app.use(date);
+app.use(router);
 
 
 export { app };
