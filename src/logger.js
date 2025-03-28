@@ -1,6 +1,6 @@
 import * as winston from 'winston';
 
-const { combine, timestamp, printf, splat} = winston.format;
+const { combine, timestamp, printf, splat } = winston.format;
 
 // format the common part of the logs
 const myFormat = printf(({ level, message, timestamp }) => {
@@ -10,7 +10,7 @@ const myFormat = printf(({ level, message, timestamp }) => {
 // format of the log message
 const combined = combine(
     splat(),
-    timestamp({format: 'YYYY-MM-DD, HH:mm:ss:SSS'}),
+    timestamp({ format: 'YYYY-MM-DD, HH:mm:ss:SSS' }),
     myFormat
 );
 
@@ -23,13 +23,13 @@ const logger = winston.createLogger({
         // - Write all logs with importance level of `info` or less to `combined.log`
         //
         new winston.transports.File({ filename: './logs/error.log', level: 'warn' }),
-        new winston.transports.File({ filename: './logs/combined.log'})
+        new winston.transports.File({ filename: './logs/combined.log' })
     ]
 });
-        
+
 
 if (process.env.NODE_ENV !== 'production') {
     logger.add(new winston.transports.Console({ format: combined }));
 }
 
-export default logger
+export { logger };
