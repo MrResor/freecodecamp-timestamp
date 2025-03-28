@@ -4,3 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "10000:3000"
+    environment:
+      - NODE_ENV="production"
+    volumes:
+      - ../../logs/freecodecamp-timestamp/error.log:/logs/error.log
+      - ../../logs/freecodecamp-timestamp/combined.log:/logs/combined.log
