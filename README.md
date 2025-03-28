@@ -4,7 +4,7 @@ My solution for one of the tasks from [freecodecamp](https://www.freecodecamp.or
 
 ## Setup
 
-Micro service can be run using the following command run from the project directory:
+Microservice can be run using the following command run from the project directory:
 ```
 sudo docker compose up -d
 ```
