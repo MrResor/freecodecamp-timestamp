@@ -1,6 +1,7 @@
 FROM node:slim
-COPY package.json package.json
-RUN npm install
 EXPOSE 3000
-COPY . .
+COPY . ./program
+WORKDIR /program
+RUN npm install
+RUN npm audit fix
 CMD ["npm", "run", "start"]
