@@ -7,5 +7,4 @@ services:
     environment:
       - NODE_ENV="production"
     volumes:
-      - ../../logs/freecodecamp-timestamp/error.log:/logs/error.log
-      - ../../logs/freecodecamp-timestamp/combined.log:/logs/combined.log
+      - /home/ubuntu/running/logs/freecodecamp-timestamp:/program/logs
