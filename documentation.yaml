@@ -27,17 +27,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Date"
-        400:
-          description: Invalid date format
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                example:
-                  error: "Invalid Date"
 
   /api/hello:
     get:
@@ -78,6 +67,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Date"
+        400:
+          description: Invalid date format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                example:
+                  error: "Invalid Date"
       
 components:
   schemas:
