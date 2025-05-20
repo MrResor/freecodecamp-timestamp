@@ -1,18 +1,24 @@
 openapi: 3.0.3
+
 info:
   title: Timestamp Microservice
   description: Solution of a freecodecamp task for creating a timestamp microservice.
   contact:
     email: jakusienko@gmail.com
+  
   license:
     name: MIT
     url: https://en.wikipedia.org/wiki/MIT_License
+  
   version: 1.1.0
+
 externalDocs:
   url: https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice
   description: FreeCodeCamp
+
 servers:
   - url: https://timestamp.profresor.net
+
 paths:
   /api:
     get:
@@ -27,25 +33,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Date"
-
-  /api/hello:
-    get:
-      tags:
-        - endpoints
-      summary: API says hello
-      description: Test endpoint to see if the API is running
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  greeting:
-                    type: string
-                example:
-                  greting: "hello API"
 
   /api/{date}:
     get:
@@ -78,6 +65,25 @@ paths:
                     type: string
                 example:
                   error: "Invalid Date"
+
+  /api/hello:
+    get:
+      tags:
+        - endpoints
+      summary: API says hello
+      description: Test endpoint to see if the API is running
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  greeting:
+                    type: string
+                example:
+                  greting: "hello API"
       
 components:
   schemas:
