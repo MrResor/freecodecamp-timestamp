@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:slim
 COPY package.json package.json
 RUN npm install
 EXPOSE 3000
