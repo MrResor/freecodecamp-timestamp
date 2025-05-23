@@ -1,12 +1,12 @@
-import express from 'express';
+import express from 'express'
 
-const empty_date = express.Router();
+const empty_date = express.Router()
 
 empty_date.get('/api', (_, res) => {
-    let unix = Date.now();
-    let utc = new Date(unix).toUTCString();
-    
-    res.json({ 'unix': Number(unix), 'utc': utc });
-});
+  const unix = Date.now()
+  const utc = new Date(unix).toUTCString()
 
-export { empty_date };
+  res.json({ unix: Number(unix), utc })
+})
+
+export { empty_date }
