@@ -5,7 +5,7 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     env: {
-      NODE_ENV: "production",
+      NODE_ENV: 'production'
     }
   }
 })
