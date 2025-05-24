@@ -5,7 +5,7 @@
   "main": "index.mjs",
   "scripts": {
     "start": "node index.mjs",
-    "test": "vitest --silent",
+    "test": "vitest --reporter=verbose",
     "standard": "standard",
     "lint": "standard --fix ."
   },
