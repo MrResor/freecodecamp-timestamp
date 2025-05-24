@@ -4,7 +4,7 @@ import path from 'path'
 
 import { date } from './api/:date/index.mjs'
 import { docs } from './api/docs/index.mjs'
-import { empty_date } from './api/index.mjs'
+import { emptyDate } from './api/index.mjs'
 import { hello } from './api/hello/index.mjs'
 import { logger } from './logger.mjs'
 import { mainView } from './index.mjs'
@@ -57,7 +57,7 @@ router.use(hello)
 // /api/docs
 router.use(docs)
 // /api
-router.use(empty_date)
+router.use(emptyDate)
 // /api:date
 router.use(date)
 
