@@ -18,6 +18,9 @@ jobs:
       - name: Upgrade apt-get
         run: sudo apt-get upgrade -y
 
+      - name: Check curl version
+        run: curl --version
+
       - name: Start docker container
         run: docker compose up -d
 
