@@ -22,7 +22,7 @@ jobs:
         run: | 
           for i in {1..10}; do
             result=$(curl --silent --request GET --url https://timestamp.profresor.net/api/hello -H "Accept: application/json")
-            if ["$result" == '{"greeting":"hello API"}']; then
+            if [ "$response" == '{"greeting":"hello API"}' ];; then
               echo "Container is running and API is responding"
               exit 0
             fi
