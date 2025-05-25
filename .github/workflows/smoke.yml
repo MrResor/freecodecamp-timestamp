@@ -14,9 +14,7 @@ jobs:
       
       - name: Open port 10000
         run: |
-          sudo service iptable stop
-          iptables -I INPUT -p tcp --dport 10000 -j ACCEPT
-          sudo service iptables start
+          sudo ufw status
       
       - name: Start docker container
         run: docker compose up -d
