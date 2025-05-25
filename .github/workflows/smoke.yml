@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Check curl version
-        run: curl --version
-
+      
+      - name: Open port 10000
+        run: sudo ufw allow 10000
+      
       - name: Start docker container
         run: docker compose up -d
 
