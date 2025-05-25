@@ -1,4 +1,4 @@
-name: CI
+name: smoke
 
 on:
   pull_request:
