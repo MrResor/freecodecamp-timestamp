@@ -14,9 +14,9 @@ jobs:
       
       - name: Open port 10000
         run: |
-          service iptable stop
+          sudo service iptable stop
           iptables -I INPUT -p tcp --dport 10000 -j ACCEPT
-          service iptables start
+          sudo service iptables start
       
       - name: Start docker container
         run: docker compose up -d
