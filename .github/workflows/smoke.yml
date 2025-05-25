@@ -11,10 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Open port 10000
-        run: |
-          sudo iptables -A INPUT  -p tcp --dport 10000 -j ACCEPT
       
       - name: Start docker container
         run: docker compose up -d
@@ -28,7 +24,7 @@ jobs:
               exit 0
             fi
             echo "Waiting for container to start $i/10"
-            sleep 2
+            sleep 1
           done
           echo "Container did not start in time"
           exit 1
