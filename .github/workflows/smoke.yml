@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Open port 10000
-        run: sudo ufw allow 10000
-
-      - name: Check IP tables
-        run: sudo iptables -L
+        run: |
+          service iptable stop
+          iptables -I INPUT -p tcp --dport 10000 -j ACCEPT
+          service iptables start
       
       - name: Start docker container
         run: docker compose up -d
