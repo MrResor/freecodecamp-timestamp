@@ -14,6 +14,9 @@ jobs:
       
       - name: Open port 10000
         run: sudo ufw allow 10000
+
+      - name: Check IP tables
+        run: sudo iptables -L
       
       - name: Start docker container
         run: docker compose up -d
