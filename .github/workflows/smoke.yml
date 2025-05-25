@@ -15,6 +15,9 @@ jobs:
       - name: Update apt-get
         run: sudo apt-get update
 
+      - name: Upgrade apt-get
+        run: sudo apt-get upgrade -y
+
       - name: Start docker container
         run: docker compose up -d
 
