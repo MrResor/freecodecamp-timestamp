@@ -12,12 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Update apt-get
-        run: sudo apt-get update
-
-      - name: Upgrade apt-get
-        run: sudo apt-get upgrade -y
-
       - name: Check curl version
         run: curl --version
 
