@@ -21,7 +21,7 @@ jobs:
       - name: Check if container is running
         run: | 
           for i in {1..10}; do
-            response=$(curl --silent --request GET --url http://localhost:10000/api/hello -H "Accept: application/json")
+            response=$(curl -v --request GET --url http://localhost:10000/api/hello -H "Accept: application/json")
             if [ "$response" == '{"greeting":"hello API"}' ]; then
               echo "Container is running and API is responding"
               exit 0
