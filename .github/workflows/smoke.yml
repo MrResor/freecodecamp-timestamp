@@ -11,14 +11,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
-
-      - name: Check if port is open
-        run: sudo netstat -tuln | grep 10000
 
       - name: Open port 10000
         run: |
-          sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 10000 -j ACCEPT
+          sudo iptables -A INPUT  -p tcp --dport 10000 -j ACCEPT
       
       - name: Start docker container
         run: docker compose up -d
