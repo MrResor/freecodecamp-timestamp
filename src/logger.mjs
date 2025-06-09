@@ -1,6 +1,6 @@
 import * as winston from 'winston'
 
-const { combine, printf, splat, timestamp} = winston.format
+const { combine, printf, splat, timestamp } = winston.format
 
 // format the common part of the logs
 const myFormat = printf(({ level, message, timestamp }) => {
