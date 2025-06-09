@@ -1,5 +1,5 @@
 sudo docker compose down
-sudo docker image rm freecodecamp-timestamp-api
+sudo docker rmi freecodecamp-timestamp-api
 
 git pull
 
