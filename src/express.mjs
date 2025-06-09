@@ -4,10 +4,10 @@ import path from 'path'
 
 import { date } from './api/:date/index.mjs'
 import { docs } from './api/docs/index.mjs'
-import { emptyDate } from './api/index.mjs'
 import { hello } from './api/hello/index.mjs'
-import { logger } from './logger.mjs'
+import { emptyDate } from './api/index.mjs'
 import { mainView } from './index.mjs'
+import { logger } from './logger.mjs'
 
 const app = express()
 const router = express.Router()
