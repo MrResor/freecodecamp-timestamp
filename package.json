@@ -7,7 +7,7 @@
     "start": "node index.mjs",
     "test": "vitest --reporter=github-actions --reporter=verbose --run",
     "standard": "standard",
-    "lint": "standard --fix ."
+    "lint": "standard --fix"
   },
   "dependencies": {
     "cors": "^2.8.0",
