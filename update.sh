@@ -1,3 +1,5 @@
+git checkout main
+
 sudo docker compose down
 sudo docker rmi freecodecamp-timestamp-api
 
