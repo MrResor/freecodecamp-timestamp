@@ -6,7 +6,7 @@ emptyDate.get('/api', (_, res) => {
   const unix = Date.now()
   const utc = new Date(unix).toUTCString()
 
-  res.json({ unix: Number(unix), utc })
+  res.status(200).json({ unix: Number(unix), utc })
 })
 
 export { emptyDate }
