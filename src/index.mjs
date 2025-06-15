@@ -5,7 +5,7 @@ const __dirname = import.meta.dirname
 const mainView = express.Router()
 
 mainView.get('/', (_, res) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
+  res.status(200).sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 
 export { mainView }
