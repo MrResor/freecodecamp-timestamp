@@ -21,7 +21,7 @@ NOTE: [<i>compose.yaml</i>](https://github.com/MrResor/freecodecamp-timestamp/bl
 
 ## Description
 
-The documentation of the application endpoints can be found under [<i>/api/docs<i>](https://timestamp.profresor.net/api/docs).
+The documentation of the application endpoints can be found under [<i>/api/docs</i>](https://timestamp.profresor.net/api/docs).
 
 ## NOTE
 
