@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 
-import { date } from './api/:date/index.mjs'
+import { date } from './api/{date}/index.mjs'
 import { docs } from './api/docs/index.mjs'
 import { hello } from './api/hello/index.mjs'
 import { emptyDate } from './api/index.mjs'
